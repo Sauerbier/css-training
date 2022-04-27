@@ -1,69 +1,125 @@
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+:root {
+  --primary: #273c75;
+  --secundary: #487eb0;
+  --base: #f5f6fa;
+  --text: #2f3640;
 }
-/*
-  2. Remove default margin
-*/
-* {
-  margin: 0;
+
+body,
+p {
+  font-family: "Roboto", sans-serif;
+  color: var(--text);
+  background-color: var(--base);
 }
-/*
-  3. Allow percentage-based heights in the application
-*/
-html,
-body {
-  height: 100%;
+
+header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-/*
-  Typographic tweaks!
-  4. Add accessible line-height
-  5. Improve text rendering
-*/
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+
+.blog {
+  max-width: 1200px;
+  margin: auto;
 }
-/*
-  6. Improve media defaults
-*/
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
+
+.hero {
+  margin-top: 25px;
+  width: 100%;
+  -webkit-box-shadow: 0px 9px 12px 1px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 9px 12px 1px rgba(0, 0, 0, 0.23);
 }
-/*
-  7. Remove built-in form typography styles
-*/
-input,
-button,
-textarea,
-select {
-  font: inherit;
+
+.hero > picture > img {
+  width: 100%;
+  max-height: 350px;
 }
-/*
-  8. Avoid text overflows
-*/
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
+
+.details {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+  /* center absolute div */
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  /* ^ idk why ^ */
+  bottom: -25%;
+  width: 75%;
+  background-color: var(--base);
+  -webkit-box-shadow: 0px 9px 12px 1px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 9px 12px 1px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
 }
-/*
-  9. Create a root stacking context
-*/
-#root,
-#__next {
-  isolation: isolate;
+
+.title {
+  color: var(--primary);
+  font-size: 24pt;
+  font-weight: 900;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookmark {
+  align-self: flex-end;
+}
+
+.bookmark > i {
+  color: var(--secundary);
+}
+
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-end;
+  margin-top: auto;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.tag {
+  border-radius: 20px;
+  background-color: var(--secundary);
+  color: var(--base);
+  font-size: small;
+  padding: 5px;
+  margin-right: 15px;
+}
+
+.tag:last-of-type {
+  margin-right: 0px;
+}
+
+.tag > span {
+  padding: 10px;
+}
+
+main {
+  width: 50%;
+  margin: auto;
+  margin-top: 125px;
+}
+
+.share {
+  position: sticky;
+  border: none;
+  background-color: var(--secundary);
+  color: var(--base);
+  font-size: 48pt;
+  border-radius: 100%;
+  padding: 5px;
+  -webkit-box-shadow: 5px 7px 12px 1px rgba(0, 0, 0, 0.23);
+  box-shadow: 5px 7px 12px 1px rgba(0, 0, 0, 0.23);
+  bottom: 50px;
+  left: 100%;
+}
+
+.share > svg {
+  margin: 15px;
 }
