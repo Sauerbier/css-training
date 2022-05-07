@@ -5,6 +5,25 @@
   --text: #2f3640;
 }
 
+:root {
+  --shadow-color: 0deg 0% 64%;
+  --shadow-elevation-low: 0px 0.2px 0.2px hsl(var(--shadow-color) / 0.37),
+    0px 0.4px 0.4px -1.6px hsl(var(--shadow-color) / 0.32),
+    0.1px 0.9px 0.9px -3.1px hsl(var(--shadow-color) / 0.27);
+  --shadow-elevation-medium: 0px 0.2px 0.2px hsl(var(--shadow-color) / 0.39),
+    0.1px 0.6px 0.6px -1px hsl(var(--shadow-color) / 0.35),
+    0.1px 1.7px 1.7px -2.1px hsl(var(--shadow-color) / 0.31),
+    0.4px 4.4px 4.5px -3.1px hsl(var(--shadow-color) / 0.27);
+  --shadow-elevation-high: 0px 0.2px 0.2px hsl(var(--shadow-color) / 0.36),
+    0.1px 1px 1px -0.4px hsl(var(--shadow-color) / 0.34),
+    0.2px 1.8px 1.9px -0.9px hsl(var(--shadow-color) / 0.32),
+    0.3px 3.2px 3.3px -1.3px hsl(var(--shadow-color) / 0.31),
+    0.4px 5.3px 5.5px -1.8px hsl(var(--shadow-color) / 0.29),
+    0.7px 8.7px 9px -2.2px hsl(var(--shadow-color) / 0.27),
+    1.1px 13.5px 13.9px -2.7px hsl(var(--shadow-color) / 0.25),
+    1.7px 20.3px 20.9px -3.1px hsl(var(--shadow-color) / 0.23);
+}
+
 body,
 p {
   font-family: 'Roboto', sans-serif;
@@ -42,8 +61,7 @@ header {
   margin-right: auto;
   width: 75%;
   background-color: var(--base);
-  -webkit-box-shadow: 0px 9px 12px 1px rgba(0, 0, 0, 0.23);
-  box-shadow: 0px 9px 12px 1px rgba(0, 0, 0, 0.23);
+  box-shadow: var(--shadow-elevation-high);
   border-radius: 5px;
 }
 
@@ -102,8 +120,7 @@ main {
   font-size: 48pt;
   border-radius: 100%;
   padding: 5px;
-  -webkit-box-shadow: 5px 7px 12px 1px rgba(0, 0, 0, 0.23);
-  box-shadow: 5px 7px 12px 1px rgba(0, 0, 0, 0.23);
+  box-shadow: var(--shadow-elevation-high);
   bottom: 50px;
   left: 100%;
 }
