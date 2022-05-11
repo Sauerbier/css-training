@@ -1,0 +1,138 @@
+:root {
+  --primary: #8fb5a3;
+  --secundary: #8d99ae;
+  --danger: #ff7467;
+  --base: #edf2f4;
+  --text: #2b2d42;
+  --muted: #a0a3ad;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--text);
+  background-color: var(--base);
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 12pt;
+  color: var(--muted);
+  background-color: var(--base);
+}
+
+h3,
+h4 {
+  font-weight: 400;
+}
+
+.content {
+  width: 25%;
+  margin: 150px auto;
+  padding-bottom: 150px;
+}
+
+.timeline {
+  display: flex;
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  margin-left: 114px;
+  width: 0px;
+  height: calc(100% - 50px);
+  border: 1px solid var(--muted);
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timeline-item {
+  display: flex;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.timeline-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.label {
+  flex: 1;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+}
+
+.step {
+  justify-self: center;
+  margin: 0 auto;
+}
+
+.active h3 {
+  font-weight: 600;
+}
+
+.completed {
+  display: flex;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: var(--secundary);
+  margin-right: 40px;
+  margin-left: 7px;
+}
+
+.completed::before {
+  content: ""; /* google */
+  display: block; /* google */
+  margin: auto;
+  border: 3px solid var(--base);
+  border-radius: 10%;
+  border-top: none;
+  border-left: none;
+  width: 2px;
+  height: 15px;
+  padding: 2px;
+  transform: rotate(45deg);
+}
+
+.current {
+  display: flex;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  border: 2px solid var(--muted);
+  background-color: var(--base);
+  margin-right: 40px;
+}
+
+.current::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: var(--primary);
+  margin: auto;
+}
+
+.future {
+  display: flex;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: var(--muted);
+  margin-right: 40px;
+  margin-left: 7px;
+}
