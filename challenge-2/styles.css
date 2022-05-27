@@ -49,16 +49,19 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .timeline-item {
   display: flex;
   width: 100%;
-  margin-bottom: 50px;
+  padding-bottom: 500px;
+  top: 0px;
+  position: sticky;
 }
 
 .timeline-item:last-of-type {
-  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .label {
@@ -69,6 +72,7 @@ h4 {
   display: flex;
   flex-direction: column;
   margin-right: 40px;
+  min-width: 50px;
 }
 
 .step {
@@ -92,8 +96,8 @@ h4 {
 }
 
 .completed::before {
-  content: ""; /* google */
-  display: block; /* google */
+  content: "";
+  display: block;
   margin: auto;
   border: 3px solid var(--base);
   border-radius: 10%;
@@ -116,6 +120,18 @@ h4 {
   margin-right: 40px;
 }
 
+@keyframes live-animation {
+  from {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
 .current::before {
   content: "";
   display: block;
@@ -124,6 +140,46 @@ h4 {
   border-radius: 100%;
   background-color: var(--primary);
   margin: auto;
+  animation: live-animation 2000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes live-animation-shadow {
+  from {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.current::after {
+  content: "";
+  display: block;
+  background-color: #8fb5a361;
+  margin: auto;
+  width: 59px;
+  height: 59px;
+  top: -9px;
+  left: -9px;
+  border-radius: 100%;
+  position: absolute;
+  animation: live-animation-shadow 4000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
 }
 
 .future {
