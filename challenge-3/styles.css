@@ -1,10 +1,11 @@
 :root {
   --primary: #ff5d8f;
   --secondary: #3d81b8;
+  --bg: #f5f5f5;
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: var(--bg);
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -113,4 +114,40 @@ main {
 
 .article-teaser--hover:hover .article-teaser__link > span {
   transform: translateX(40px);
+}
+
+.btn {
+  position: relative;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  background-color: var(--bg);
+  padding: 10px 30px 10px 30px;
+  transition: transform 200ms, padding 200ms;
+}
+
+.btn:hover {
+  transform: translate(2px, -2px);
+  padding: 10px 45px 10px 15px;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  visibility: hidden;
+  border: 2px solid var(--primary);
+  border-top: none;
+  border-right: none;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: transparent;
+  z-index: -1;
+
+  transition: visibility 200ms, transform 250ms;
+}
+
+.btn:hover:before {
+  visibility: visible;
+  transform: translate(-5px, 5px);
 }
